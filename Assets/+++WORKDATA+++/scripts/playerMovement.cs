@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 
 public class playerMovement : MonoBehaviour
@@ -19,6 +20,8 @@ public class playerMovement : MonoBehaviour
     
     public CoinManager coinManager;
     public DiamondManager diamondManager;
+
+    public TMP_Text points;
 
     // Update is called once per frame
     void Update()
@@ -59,6 +62,9 @@ public class playerMovement : MonoBehaviour
         {
             isJumping = false;
         }
+        
+        points.text = "Final Score:" + (coinManager.coinCount + diamondManager.diamondCount).ToString();
+        
     }
 
     void FixedUpdate()
@@ -69,14 +75,20 @@ public class playerMovement : MonoBehaviour
    void OnTriggerEnter2D(Collider2D other)
     {
         
-        Debug.Log("collided with" + other.gameObject.name);
-        
         if (other.gameObject.CompareTag("Coin"))
         {
             Destroy(other.gameObject);
             coinManager.coinCount++;
         }
         
+        if (other.gameObject.CompareTag("Diamond"))
+        {
+            Destroy(other.gameObject);
+            diamondManager.diamondCount++;
+        }
+        
     }
+   
+   
    
 }

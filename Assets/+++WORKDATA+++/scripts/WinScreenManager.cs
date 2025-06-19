@@ -1,13 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MenuManager : MonoBehaviour
+public class WinScreenManager : MonoBehaviour
 {
-    public GameObject gameOverScreen;
     public GameObject winScreen;
-    public GameObject player;
-    
-    
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,17 +16,6 @@ public class MenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameOverScreen.activeInHierarchy)
-        {
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-        }
-        else
-        {
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
-        }
-        
         if (winScreen.activeInHierarchy)
         {
             Cursor.visible = true;
@@ -38,17 +25,12 @@ public class MenuManager : MonoBehaviour
         {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
-        }
-
-        if (winScreen.activeInHierarchy)
-        {
-            player.SetActive(false);
         }
     }
-    
+
     public void gameOver()
     {
-        gameOverScreen.SetActive(true);
+        winScreen.SetActive(true);
     }
 
     public void restart()
