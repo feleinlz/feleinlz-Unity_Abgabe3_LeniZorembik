@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class playerMovement : MonoBehaviour
@@ -15,6 +16,9 @@ public class playerMovement : MonoBehaviour
     public float jumpTime = 0.35f;
     public float jumpTimeCounter;
     private bool isJumping;
+    
+    public CoinManager coinManager;
+    public DiamondManager diamondManager;
 
     // Update is called once per frame
     void Update()
@@ -61,4 +65,18 @@ public class playerMovement : MonoBehaviour
     {
         playerRB.linearVelocity = new Vector2(input * speed, playerRB.linearVelocity.y);
     }
+
+   void OnTriggerEnter2D(Collider2D other)
+    {
+        
+        Debug.Log("collided with" + other.gameObject.name);
+        
+        if (other.gameObject.CompareTag("Coin"))
+        {
+            Destroy(other.gameObject);
+            coinManager.coinCount++;
+        }
+        
+    }
+   
 }

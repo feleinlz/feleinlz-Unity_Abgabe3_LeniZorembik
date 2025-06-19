@@ -4,6 +4,10 @@ public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 10;
     public int health;
+
+    public MenuManager menuManager;
+    private bool isDead;
+    
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -14,9 +18,11 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-        if (health <= 0)
+        if (health <= 0 && !isDead)
         {
-            Destroy(gameObject);
+            isDead = true;
+            gameObject.SetActive(false);
+            menuManager.gameOver();
         }
     }
 }
