@@ -6,43 +6,23 @@ public class MenuManager : MonoBehaviour
     public GameObject gameOverScreen;
     public GameObject winScreen;
     public GameObject player;
+    public GameObject overlay;
     
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-    }
 
     // Update is called once per frame
     void Update()
     {
+       
         if (gameOverScreen.activeInHierarchy)
         {
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-        }
-        else
-        {
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            overlay.SetActive(false);
         }
         
-        if (winScreen.activeInHierarchy)
-        {
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-        }
-        else
-        {
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
-        }
-
+       
         if (winScreen.activeInHierarchy)
         {
             player.SetActive(false);
+            overlay.SetActive(false);
         }
     }
     
@@ -65,4 +45,5 @@ public class MenuManager : MonoBehaviour
     {
         Application.Quit();
     }
+    
 }

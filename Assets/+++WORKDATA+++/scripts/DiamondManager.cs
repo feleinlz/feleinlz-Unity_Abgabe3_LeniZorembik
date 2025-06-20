@@ -14,6 +14,6 @@ public class DiamondManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        diamondText.text = diamondCount.ToString();
+        diamondText.text = "Flames: " + diamondCount.ToString();
     }
 }

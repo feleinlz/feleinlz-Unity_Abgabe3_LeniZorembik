@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4820622511292535961}
   - component: {fileID: 4204645625407129393}
   - component: {fileID: 4326032144298757972}
-  - component: {fileID: 7656837323743247820}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -79,12 +78,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1634068632353948317, guid: cab8820812a725b48b985d5e6faad3eb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bfde96f86615fee4ebc35863928a6c4a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.59, y: 2.59}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -129,7 +128,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 7.36, y: 7.36}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 2.59, y: 2.59}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -150,33 +149,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   playerHealth: {fileID: 0}
---- !u!50 &7656837323743247820
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4372536879525527711}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &7665488276431051595
 GameObject:
   m_ObjectHideFlags: 0
